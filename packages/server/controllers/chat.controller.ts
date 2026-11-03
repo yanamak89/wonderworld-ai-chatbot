@@ -28,6 +28,7 @@ export const chatController = {
          res.json({ message: response.message });
       } catch (error) {
          res.status(500).json({ error: 'Failed to generate a responce/' });
+         console.error('Chat API error:', error);
       }
    },
 };
