@@ -1,5 +1,5 @@
 import ReactMarkdown from 'react-markdown';
-import { useEffect, useRef, type Ref } from 'react';
+import { useEffect, useRef } from 'react';
 
 export type Message = {
    content: string;
@@ -32,7 +32,7 @@ const ChatMessages = ({ messages }: Props) => {
                key={index}
                onCopy={onCopyMessage}
                ref={index === messages.length - 1 ? lastMessageRef : null}
-               className={`px-3 py-1 rounded-xl ${
+               className={`px-3 py-1 max-w-md rounded-xl ${
                   message.role === 'user'
                      ? 'bg-blue-300 text-white self-end'
                      : 'bg-gray-100 text-black self-start'
